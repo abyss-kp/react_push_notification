@@ -1,12 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { createBrowserHistory } from "history";
 import Home from './pages/home'
+import NavBar from './components/NavBar'
+import MessagesTable from './components/messagesTable'
+
+const history = createBrowserHistory();
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router history={history}>
+      <NavBar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/Notification" exact component={MessagesTable} />
+      </Switch>
+    </Router >
   );
 }
 
