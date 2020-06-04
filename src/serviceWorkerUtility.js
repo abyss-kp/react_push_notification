@@ -27,7 +27,7 @@ const requestNotificationPermission = async () => {
   // denied: user has denied the request.
   console.log("Permission ", permission)
   if (permission !== 'granted') {
-    throw new Error('Permission not granted for Notification');
+    console.error('Permission not granted for Notification');
   }
   return permission
 }
@@ -37,7 +37,9 @@ const showLocalNotification = (title, body, swRegistration) => {
     body,
     // here you can add more properties like icon, image, vibrate, etc.
   }
-  swRegistration.showNotification(title, options)
+  if (requestNotificationPermission()=== 'granted') {
+    swRegistration.showNotification(title, options)
+  }
 }
 
 const pushMessageReceived = () => {
