@@ -36,6 +36,7 @@ const showLocalNotification = (title, body, swRegistration) => {
   const options = {
     body,
     // here you can add more properties like icon, image, vibrate, etc.
+    // timestamp:Math.floor(Date.now())
   }
   if (requestNotificationPermission()=== 'granted') {
     swRegistration.showNotification(title, options)
