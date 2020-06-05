@@ -51,7 +51,7 @@ self.addEventListener('activate', async () => {
 self.addEventListener('push', function (event) {
   if (event.data) {
     console.log('Push event!! ', event.data.text())
-    showLocalNotification('Yolo', event.data.text(), self.registration)
+    showLocalNotification('Hurrahh!!', event.data.text(), self.registration)
     self.clients.matchAll({ includeUncontrolled: true, type: 'window' })
       .then(clients => {
         clients.forEach(client => {

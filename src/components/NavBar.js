@@ -13,7 +13,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { connect } from 'react-redux'
-import { PushNotificationWorker } from '../serviceWorkerUtility'
+import { PushNotificationWorker } from '../worker/serviceWorkerUtility'
 import { setSwNotificationCount, setSwNotification } from '../actions/serviceTypeAction'
 import { Link, withRouter } from 'react-router-dom'
 const styles = (theme) => ({
@@ -32,7 +32,7 @@ class NavBar extends React.Component {
   notificationIconClick = (serviceName) => () => {
     console.log(serviceName)
     this.props.setSwNotificationCount(null)
-    this.props.history.push("/Notification")
+    this.props.history.push(`/Notification/${serviceName}`)
   }
   async componentDidMount() {
     if (PushNotificationWorker.check())

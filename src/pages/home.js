@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { PushNotificationWorker } from '../serviceWorkerUtility'
+import { PushNotificationWorker } from '../worker/serviceWorkerUtility'
 export default class Home extends Component {
   state = {
     text: 'here we will get push message'

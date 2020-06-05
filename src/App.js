@@ -12,7 +12,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/Notification" exact component={MessagesTable} />
+        <Route path="/Notification/:name" exact component={MessagesTable} />
       </Switch>
     </Router >
   );
